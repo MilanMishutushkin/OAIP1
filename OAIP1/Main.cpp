@@ -1,7 +1,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <string.h>
-#include "FunctionPrototypes.h"
+#include "Functions.h"
 
 int main()
 {
