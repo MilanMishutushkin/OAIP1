@@ -329,21 +329,80 @@ void changeContractInformation()
 		switch (choice)
 		{
 		case 1:
+		{
 			std::cout << "\nNew name of product is: ";
 			std::cin >> contract[contractIndex].productName;
-			break;
+		}
+		break;
 		case 2:
-			std::cout << "\nNew quantity of product is: ";
-			std::cin >> contract[contractIndex].quantity;
-			break;
+		{
+
+			flag = true;
+			while (flag)
+			{
+				std::cout << "\nNew quantity of product is: ";
+				std::cin >> contract[contractIndex].quantity;
+				if (std::cin.fail())
+				{
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "\n______________________________________________\n";
+					std::cout << "\nInvalid input.Try enter digits without space! \n";
+					std::cout << "\n______________________________________________\n";
+
+					continue;
+				}
+				else
+					flag = false;
+
+			}
+		}
+		break;
 		case 3:
-			std::cout << "\nNew price per unit of product is: ";
-			std::cin >> contract[contractIndex].pricePerUnit;
-			break;
+		{
+			flag = true;
+			while (flag)
+			{
+				std::cout << "\nNew price per unit of product is: ";
+				std::cin >> contract[contractIndex].pricePerUnit;
+				if (std::cin.fail())
+				{
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "\n______________________________________________\n";
+					std::cout << "\nInvalid input.Try enter digits without space! \n";
+					std::cout << "\n______________________________________________\n";
+
+					continue;
+				}
+				else
+					flag = false;
+
+			}
+		}
+		break;
 		case 4:
-			std::cout << "\nNew custom fee of product is: ";
-			std::cin >> contract[contractIndex].customFee;
-			break;
+		{
+			flag = true;
+			while (flag)
+			{
+				std::cout << "\nNew custom fee of product is: ";
+				std::cin >> contract[contractIndex].customFee;
+				if (std::cin.fail())
+				{
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "\n______________________________________________\n";
+					std::cout << "\nInvalid input.Try enter digits without space! \n";
+					std::cout << "\n______________________________________________\n";
+
+					continue;
+				}
+				else
+					flag = false;
+			}
+		}
+		break;
 		default:
 			std::cout << "\n_________________________________\n";
 			std::cout << "\n Invalid input. Try again!\n";

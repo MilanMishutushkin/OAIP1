@@ -16,7 +16,7 @@ int main()
 		{
 			std::cout << "\n#########################################";
 			std::cout << "\n\t Welcome!";
-			std::cout << "\n 1.Enter contract information";
+			std::cout << "\n 1.Enter new contract information";
 			std::cout << "\n 2.Show contract information";
 			std::cout << "\n 3.Sort contract information by number";
 			std::cout << "\n 4.Add contract information";
