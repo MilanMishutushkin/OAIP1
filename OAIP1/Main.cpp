@@ -5,6 +5,8 @@
 
 int main()
 {
+	const char* filename = "contracts.txt";
+	loadContractsFromFile(filename);
 	bool programFlag = true;
 	while (programFlag)
 	{
@@ -15,11 +17,11 @@ int main()
 			std::cout << "\n#########################################";
 			std::cout << "\n\t Welcome!";
 			std::cout << "\n 1.Enter contract information";
-			std::cout << "\n 2:Show contract information";
-			std::cout << "\n 3:Sort contract information by number";
-			std::cout << "\n 4:Add contract information";
-			std::cout << "\n 5:Change contract information";
-			std::cout << "\n 6:Exit";
+			std::cout << "\n 2.Show contract information";
+			std::cout << "\n 3.Sort contract information by number";
+			std::cout << "\n 4.Add contract information";
+			std::cout << "\n 5.Change contract information";
+			std::cout << "\n 6.Exit";
 			std::cout << "\n#########################################\n";
 			std::cout << "\nChoose an option:";
 			std::cin >> choice;
@@ -33,7 +35,7 @@ int main()
 				continue;
 			}
 			else
-			flag = false;
+				flag = false;
 		}
 		switch (choice)
 		{
@@ -49,21 +51,38 @@ int main()
 			std::cout << "\n__________________________________________\n";
 		}
 		break;
+		case 4:
+		{
+			addContractInformation();
+			std::cout << "\n__________________________________________\n";
+			std::cout << "\n Contract have been successfully added\n";
+			std::cout << "\n__________________________________________\n";
+		}
+			break;
+		case 5:
+		{
+			changeContractInformation();
+			std::cout << "\n__________________________________________\n";
+			std::cout << "\n Contracts have been successfully changed\n";
+			std::cout << "\n__________________________________________\n";
+		}
+			break;
 		case 6:
 		{
 			std::cout << "\n__________________________________________\n";
 			std::cout << "\n The program has been successfully closed\n";
 			std::cout << "\n__________________________________________\n";
+			saveContractsToFile(filename);
 			programFlag = false;
 		}
-		break;
+			break;
 		default:
 		{
 			std::cout << "\n_________________________________\n";
-			std::cout << "\n Invalid input.Try again!\n";
+			std::cout << "\n	Invalid input.Try again!\n";
 			std::cout << "\n_________________________________\n";
 		}
-		break;
+			break;
 		}
 	}
 }
