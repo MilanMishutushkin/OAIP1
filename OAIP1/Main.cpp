@@ -29,9 +29,9 @@ int main()
 			{
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cout << "\n_________________________________\n";
+				std::cout << "\n______________________________________________\n";
 				std::cout << "\nInvalid input.Try enter digits without space! \n";
-				std::cout << "\n_________________________________\n";
+				std::cout << "\n______________________________________________\n";
 				continue;
 			}
 			else
@@ -45,7 +45,37 @@ int main()
 			break;
 		case 3:
 		{
-			sortContractInformation();
+			int choose;
+			std::cout << "Sort by what?\n1.Number\n2.Name\n";
+			std::cout << "Your choice: ";
+			
+			bool flag = true;
+			while (flag)
+			{
+				std::cin >> choose;
+				if (std::cin.fail() || std::cin.peek() != '\n')
+				{
+					std::cin.clear();
+					std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+					std::cout << "\n______________________________________________\n";
+					std::cout << "\nInvalid input.Try enter digits without space! \n";
+					std::cout << "\n______________________________________________\n";
+
+					continue;
+				}
+				else
+					flag = false;
+
+			}
+			if (choose == 1)
+			{
+				sortContractInformationByNumber();
+
+			}
+			else
+			{
+				sortContractInformationByName();
+			}
 			std::cout << "\n__________________________________________\n";
 			std::cout << "\n Contracts have been successfully sorted\n";
 			std::cout << "\n__________________________________________\n";

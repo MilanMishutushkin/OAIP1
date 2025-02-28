@@ -1,7 +1,8 @@
 #pragma once
 void enterContractInformation();
 void printContractInformation();
-void sortContractInformation();
+void sortContractInformationByName();
+void sortContractInformationByNumber();
 void addContractInformation();
 void changeContractInformation();
 void loadContractsFromFile(const char* filename);

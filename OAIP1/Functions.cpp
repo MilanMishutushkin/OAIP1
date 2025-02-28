@@ -168,7 +168,7 @@ void printContractInformation()
 	printf("\n");
 	saveContractsToFile("contracts.txt");
 }
-void sortContractInformation()
+void sortContractInformationByNumber()
 {
 	Contract temp;
 	for (int i = 0; i < numberOfContracts; i++)
@@ -176,6 +176,23 @@ void sortContractInformation()
 		for (int j = 0; j < numberOfContracts - i - 1; j++)
 		{
 			if (contract[j].contractNumber > contract[j + 1].contractNumber)
+			{
+				temp = contract[j];
+				contract[j] = contract[j + 1];
+				contract[j + 1] = temp;
+			}
+		}
+	}
+	saveContractsToFile("contracts.txt");
+}
+void sortContractInformationByName()
+{
+	Contract temp;
+	for (int i = 0; i < numberOfContracts; i++)
+	{
+		for (int j = 0; j < numberOfContracts - i - 1; j++)
+		{
+			if (strcmp(contract[j].productName,contract[j+1].productName)>0)
 			{
 				temp = contract[j];
 				contract[j] = contract[j + 1];
